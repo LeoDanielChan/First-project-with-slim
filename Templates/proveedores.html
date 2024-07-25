@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+
+{% block main %}
+
+    <h1 class="text-center p-3">Proveedores</h1>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Contacto</th>
+                    <th scope="col">Logo</th>
+                    <th scope="col"><a href="nuevoProveedor">Añadir<i class="bi bi-plus-lg" id="icons" style="font-size: 2rem;"></i></a></th>     
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in proveedores%}
+                <tr>               
+                    <td class="renglon1">{{i.nombre}}</td>
+                    <td class="renglon1">{{i.servicio}}</td>
+                    <td class="renglon1">{{i.contacto}}</td>
+                    <td class="renglon1"><img src="assets/img/proveedores/{{i.logo}}" alt="Logo de la empresa"></td>
+                    <td class="renglon">
+                        <a href="eliminarProveedor{{i.id_proveedor}}" class="btn btn-danger" onclick="return confirmar()"><i class="bi bi-trash"></i></a>
+
+                        <a href="actualizarProveedor{{i.id_proveedor}}" onclick="return confirmar()" class="btn btn-primary"><i class="bi bi-pencil-square" id="icons" style="font-size: 1rem;"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

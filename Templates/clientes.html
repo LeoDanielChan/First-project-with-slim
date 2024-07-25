@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+
+{% block main %}
+
+    <h1 class="text-center p-3">Clientes</h1>
+
+    <div class="container">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Contacto</th>
+                    <th scope="col">Logo</th>
+                    <th scope="col"><a href="nuevoCliente">Añadir<i class="bi bi-plus-lg" id="icons" style="font-size: 2rem;"></i></a></th>                
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in clientes%}
+                <tr>               
+                    <td class="renglon1">{{i.nombre}}</td>
+                    <td class="renglon1">{{i.servicio}}</td>
+                    <td class="renglon1">{{i.contacto}}</td>
+                    <td class="renglon1"><img src="assets/img/clientes/{{i.logo}}" alt="Logo de la empresa"></td>
+                    <td class="renglon">
+                        <a href="eliminarCliente{{i.id_cliente}}" class="btn btn-danger" onclick="return confirmar()"><i class="bi bi-trash"></i></a>
+                        
+                        <a href="actualizarCliente{{i.id_cliente}}" onclick="return confirmar()" class="btn btn-primary"><i class="bi bi-pencil-square" id="icons" style="font-size: 1rem;"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

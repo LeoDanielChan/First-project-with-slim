@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+
+{% block main %}
+
+    <main class="flex-shrink-0 text-center">
+        <div class="container">
+            <h2 class="mt-5"><code class="small">Nombre</code>
+                <p class="lead">{{perfil.nombre}}</p>
+            </h2>
+            <h2 class="mt-5"><code class="small">Apellido paterno</code>
+                <p class="lead">{{perfil.apellido_paterno}}</p>
+            </h2>
+            <h2 class="mt-5"><code class="small">Apellido materno </code>
+                <p class="lead">{{perfil.apellido_materno}}</p>
+            </h2>
+            <h2 class="mt-5"><code class="small">Correo electrónico </code>
+                <p class="lead">{{perfil.correo}}</p>
+            </h2>
+            <h2 class="mt-5"><code class="small">Número de teléfono </code>
+                <p class="lead">{{perfil.telefono}}</p>
+            </h2>
+            <h2 class="mt-5"><code class="small">Puesto de trabajo </code>
+                <p class="lead">{{perfil.puesto_de_trabajo}}</p>
+            </h2>
+        </div>
+    </main>
+
+    <br>
+{% endblock %}

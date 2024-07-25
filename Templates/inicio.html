@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+
+{% block main %}
+
+    <h1 class="text-center p-3">Informes de incidencias</h1>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Motivo</th>
+                    <th scope="col">Fecha de incidente</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in formularios%}
+                <tr>
+                    <td>
+                        {{i.id_formulario}}
+                    </td>
+                    <td class="renglon">
+                        <a href="vistaDeInforme{{i.id_formulario}}">{{i.motivo}}</a>
+                    </td>
+                    
+                    <td class="renglon">
+                        {{i.fecha}}
+                    </td>
+                    <td class="renglon">
+                        <a href="eliminarInfor/{{i.id_formulario}}" class="btn btn-danger"  onclick="return confirmar()"><i class="bi bi-trash" id="icons" style="font-size: 1rem;"></i></a>
+                        
+                        <a href="actualizarInfor{{i.id_formulario}}" class="btn btn-primary" onclick="return confirmar()"><i class="bi bi-pencil-square" id="icons" style="font-size: 1rem;"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

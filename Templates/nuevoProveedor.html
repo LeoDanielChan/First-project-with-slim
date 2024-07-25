@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+
+{% block main %}
+
+    <br>
+    <section class="d-flex justify-content-center align-items-center">
+        <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-4">
+            <div class="mb-1">
+                <form action="confirmarProveedor" method="post">
+                    <div class="mb-3">
+                        <label class="forma-label">Nombre del proveedor</label>
+                        <input type="text" name="name_pro" class="form-control" required placeholder="Escriba el nombre del proveedor">
+                    </div>
+                    <div class="mb-3">
+                        <label class="forma-label">Servicio</label>
+                        <input type="text" name="service" class="form-control" placeholder="Servicio que ofrece el proveedor" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="forma-label">Contacto</label>
+                        <input type="text" name="contacto" class="form-control" placeholder="Contacto del proveedor" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="forma-label">Logo del proveedor</label> 
+                        <input type="file" name="logo" class="form-control" placeholder="Seleccione el logo del proveedor" required>
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-select" name="metodo_de_pago">
+                            <option selected disabled>Seleciona la forma de pago</option>
+                            <option value="1" required>Electrónico</option>
+                            <option value="2" required>Físico</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button name="enviar" type="submit" class="col-12 btn btn-primary d-flex justify-content-between"><span>Enviar</span><i id="icono" class="bi bi-cursor-fill "></i></button>
+                    </div>
+                </form>
+            </div>   
+        </div>
+    </section>
+    
+    <br>
+{% endblock %}

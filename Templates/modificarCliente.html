@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+
+{% block main %}
+
+{%for i in cliente%}
+    <form action="actualizarClie" method="post">
+        <div class="mb-3">
+            <label class="form-label">Indentificador único</label>
+            <input type="text" class="form-control" name="id_cliente" value="{{i.id_cliente}}" readonly>
+        </div>
+        <div>
+            <label class="mb-3">Nombre del proveedor</label>
+            <input type="text" name="name_clie" value="{{i.nombre}}" required>
+        </div>
+        <div class="mb-3">
+            <label>Servicio</label>
+            <input type="text" name="service" value="{{i.servicio}}" required>
+        </div>
+        <div class="mb-3">
+            <label>Contacto</label>
+            <input type="text" name="contacto" value="{{i.contacto}}" required>
+        </div>
+        <div class="mb-3">
+            <label>Logo del proveedor</label> 
+            <input type="file" name="logo" value="{{i.logo}}">
+        </div>
+        <div class="mb-3">
+            <div class="select">
+                <select name="metodo_de_pago" value="{{i.id_forma_de_pago}}" required>
+                    <option selected disabled>Seleciona la forma de pago</option>
+                    <option value="1" required>Electrónico</option>
+                    <option value="2" required>Físico</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <button name="enviar">Enviar</button>
+        </div>
+    </form>
+{% endfor %}
+
+{% endblock %}

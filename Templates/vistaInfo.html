@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+
+{% block main %}
+
+
+
+{%for i in formulario%}
+
+    <button id="pdf" onclick="sola('{{i.id_formulario}}','{{i.motivo}}','{{i.descripcion}}','{{i.involucrados}}','{{i.fecha}}')"><i class="bi bi-file-pdf-fill" id="icons" style="font-size: 3rem;"></i>Dale che</button>
+
+    <main class="flex-shrink-0" id="prueba">
+        <div class="container">
+            <h2 class="mt-5"><code class="small">No: </code>{{i.id_formulario}}</h2>
+            <h2 class="mt-5"><code class="small">Motivo</code>
+                <p class="lead">{{i.motivo}}</p>
+            </h2>
+            <h2 class="mt-5"><code class="small">Descripción: </code>
+                <p class="lead">{{i.descripcion}}</p>
+            </h2>
+            <h2 class="mt-5"><code class="small">Involucrados: </code>
+                <p class="lead">{{i.involucrados}}</p>
+            </h2>
+            <h2 class="mt-5"><code class="small">Fecha de incidente: </code>
+                <p class="lead">{{i.fecha}}</p>
+            </h2>
+        </div>
+    </main>
+{% endfor %}
+
+    <br>
+
+{% endblock %}

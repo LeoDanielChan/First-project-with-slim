@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+
+{% block  main %}
+
+    <br>
+    {%for i in formulario%}
+    <form action="actualizarInforme" method="post">
+        <section class="d-flex justify-content-center align-items-center">
+            <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-4">
+                <div class="mb-1">
+                    <form action="actualizarInforme" method="post">
+                        <div class="mb-3">
+                            <label class="forma-label">Indentificador único</label>
+                            <input type="text" name="id_formulario" class="form-control" value="{{i.id_formulario}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="forma-label">Involucrados</label>
+                            <input type="text" name="involucrados" class="form-control" value="{{i.involucrados}}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="forma-label">Motivo</label>
+                            <input type="text" name="motivo" class="form-control" value="{{i.motivo}}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="forma-label">Descripción</label> 
+                            <input type="text" name="descripcion" class="form-control" value="{{i.descripcion}}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="forma-label">Fecha</label> 
+                            <input type="date" name="fecha" class="form-control" value="{{i.fecha}}" required>
+                        </div>
+                        <div>
+                            <button name="enviar" type="submit" class="col-12 btn btn-primary d-flex justify-content-between"><span>Actualizar</span><i id="icono" class="bi bi-cursor-fill "></i></button>
+                        </div>
+                    </form>
+                </div>   
+            </div>
+        </section>
+    {% endfor %}
+    </form>
+
+    <br>
+{% endblock %}
